@@ -15,6 +15,12 @@
         <h2 class="cover-title cover-title-tile cover-title-flat">Hello LBRY</h2>
         <p>See previews of the LBRY UI and the great content available now on LBRY.</p>
         <?php echo View::render('download/_videoIntro') ?>
+        <?php if ($downloadHtml): ?>
+          <?php echo $downloadHtml ?>
+        <?php else: ?>
+          <p>{{download.unavailable}}</p>
+          <?php echo View::render('download/_signup') ?>
+        <?php endif ?>
       </div>
     </div>
   </div>
